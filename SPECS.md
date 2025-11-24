@@ -16,7 +16,7 @@ Alla endpoints nås via bas-URL:en `/api/v1/`.
 | HTTP Metod | Endpoint | Beskrivning | Use Case/Command/Query | Kräver Auth |
 | :--- | :--- | :--- | :--- | :--- |
 | `POST` | `/auth/register` | Skapar en ny användare i systemet. | `RegisterUserCommand` | Nej |
-| `POST` | `/auth/login` | Autentiserar användare och returnerar en JWT. | `LoginUserQuery` | Nej |
+| `POST` | `/auth/login` | Autentiserar användare och returnerar en JWT. | `LoginUserCommand` | Nej |
 
 ## 💡 Use Cases (Application Layer)
 
@@ -25,7 +25,7 @@ Use Cases är implementerade som MediatR Commands (för skrivoperationer) och Qu
 | Use Case | Typ | Beskrivning |
 | :--- | :--- | :--- |
 | `RegisterUserCommand` | Command | Hanterar validering av indata, hashar lösenordet och sparar den nya `User`-entiteten via Generic Repository. |
-| `LoginUserQuery` | Query | Validerar användarens inloggningsuppgifter, verifierar lösenordet mot hashen (BCrypt) och använder `IJwtService` för att generera en autentiseringstoken. |
+| `LoginUserCommand` | Command | Validerar användarens inloggningsuppgifter, verifierar lösenordet mot hashen (BCrypt) och använder `IJwtService` för att generera en autentiseringstoken. |
 
 ## 📐 Begränsningar och Antaganden
 

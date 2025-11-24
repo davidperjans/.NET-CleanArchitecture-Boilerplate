@@ -67,7 +67,7 @@ test-watch:
 # Run
 # --------------------------
 run-api:
-	dotnet run --project API\API.csproj
+	dotnet run --project $(API_PROJECT)
 
 watch:
 	dotnet watch run --project $(API_PROJECT)
